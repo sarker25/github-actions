@@ -5,16 +5,5 @@ jobs:
   display:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: display issue
-        uses: peter-evans/create-issue-from-file@v2
-        with:
-          title: ${{ github.event.issue.title }}
-          body: ${{ github.event.issue.body }}
-          labels: ${{ github.event.issue.labels }}
-          assignees: ${{ github.event.issue.assignees }}
-          milestone: ${{ github.event.issue.milestone }}
-          project: ${{ github.event.issue.project }}
-          column: ${{ github.event.issue.column }}
-          repository: ${{ github.event.issue.repository }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: output event details
+        run: echo "${{ toJson(github.event) }}"
