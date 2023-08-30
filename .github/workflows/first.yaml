@@ -5,7 +5,3 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: test
-        uses: ./.github/actions/test
-        with:
-          name: "test"
