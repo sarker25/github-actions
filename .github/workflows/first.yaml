@@ -20,3 +20,5 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: test
+      - name: print the result
+        run: echo "The result is ${{ steps.test.outputs.result }}"
